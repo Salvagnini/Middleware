@@ -1,0 +1,55 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='/style.css')
+    title Clients
+  body
+    h1 #{title.text}
+      a(href=`${title.link}`) #{title.linkMessage}
+    if isAdmin
+      h2 Add User
+      form(action="/add" class="add" method="POST")
+        label(for="name") Name:
+        input(id="name" name="name" placeholder="Enter your name")
+        label(for="age") Age:
+        input(type="number", min="1", id="age" name="age" placeholder="Enter your age")
+        label(for="status") Status:
+        input(id="status" name="status" placeholder="Enter your status")
+        label(for="avatar") Link for avatar:
+        input(id="avatar" name="avatar" placeholder="Enter avatar link")
+        button(type="submit") Add User
+    h2(class="corses-list") All Users
+  #users
+    if users.length
+      each user in users
+        .course
+          .img
+            img(src=`${user.avatar}`, alt="")
+          .title #{user.name}
+          .price Age #{user.age}
+          .course-view-btn
+            a(href=`/user/${user._id}`) 
+                button Show
+          if isAdmin
+            .course-btn
+              a(href=`/edit/${user._id}`) 
+                button Edit
+              button(type="button" onclick=`removeUser('${user._id}')`) Delete
+    else 
+      h3 Empty
+    script.
+      function removeUser(userId) {
+        fetch(`/remove/${userId}`, { method: 'DELETE' })
+          .then(response => {
+            if (response.ok) {
+              window.location.reload();
+            } else {
+              throw new Error('Network response was not ok');
+            }
+          }).catch(error => {
+          console.error('There was an error!', error);
+        });
+      }

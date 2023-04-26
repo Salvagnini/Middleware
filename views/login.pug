@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet', href='/style.css')
+        title Log in
+    body
+        h1 Login page
+        form(action="/set-cookie" class="add" method="POST")
+            input(type='hidden', name='_csrf', value=csrfToken)
+            label(for="name") Name:
+            input(id="name" name="name" autocomplete="none")
+            label(for="password") Password:
+            input(id="password" type="password" name="password")
+            button(type="submit") LOG IN

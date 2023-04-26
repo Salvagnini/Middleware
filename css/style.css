@@ -1,0 +1,179 @@
+h1, h2, h3, p, body {
+  margin: 0;
+}
+
+h1{
+  margin-bottom: 35px;
+}
+
+h1 a{
+  color: inherit;
+  transition: all 0.3s ease 0s;
+}
+
+h1 a:hover{
+  color: aqua;
+}
+
+h1, h2{
+  text-align: center;
+}
+
+h2{
+  margin-bottom: 20px;
+}
+
+body {
+  background-color: #2f596a;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #2f596a, #5099b5);
+  color: aliceblue;
+}
+
+/*Form*/
+.corses-list{
+  margin-bottom: 30px;
+}
+.add {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto 30px auto;
+}
+
+input {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #dcdcdc;
+  color: #2f393d;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 5px 1px #2f393d;
+  background-color: #E8F0FE;
+}
+
+input:not(:placeholder-shown) {
+  background-color: #E8F0FE;
+}
+
+input:placeholder-shown {
+  background-color: #dcdcdc;
+}
+
+.add input[type="number"]::-webkit-inner-spin-button,
+.add input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.add input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.add label {
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1e262a;
+  color: aliceblue;
+  cursor: pointer;
+  box-shadow: 0 0 5px 1px aliceblue;
+  font-size: 18px;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  background-color: #121414;
+}
+
+button:active {
+  box-shadow: inset 0 0 5px 1px aliceblue;
+}
+/*Form*/
+
+/*Corses*/
+.course{
+  max-width: fit-content;
+  padding: 55px 50px 0 55px;
+  margin: 0 auto 55px auto;
+  background-color: #30677e ;
+  border: solid 2px rgb(9, 79, 79);
+}
+
+.img{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 15px auto;
+  background-color: darkcyan;
+  border-radius: 50%;
+}
+
+.img img {
+  position: relative;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  margin: 0 auto;
+  }
+
+  .title, .price{
+    text-align: center;
+  }
+  .title{
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
+  .price{
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .course-btn{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+  .course-btn button{
+    min-width: 75px;
+  }
+
+  .course-view-btn{
+    text-align: center;
+    margin-bottom: 30px;
+    
+  }
+  .course-view-btn button{
+    display: inline-block;
+    width: 100%;
+    background-color: darkcyan;
+    box-shadow: unset;
+    box-shadow: 0 0 5px 1px #2f596a;
+  }
+
+  .course-view-btn button:active {
+    box-shadow: inset 0 0 5px 1px #2f596a;
+  }
+
+  h3{
+    color: darkred;
+    text-align: center;
+    font-size: 28px;
+  }
+  .description{
+    text-align: center;
+    font-size: 18px;
+  }
